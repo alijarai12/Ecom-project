@@ -1,0 +1,40 @@
+/*
+*
+* ==========================================
+* PRODUCT
+* ==========================================
+*
+*/
+
+.quantity {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: inherit;
+}
+
+.quantity input {
+  width: 2rem;
+  text-align: center;
+}
+
+.quantity button {
+  background: none;
+  border: none;
+  width: 1rem;
+  outline: none;
+}
+
+
+/*
+ * 3. TYPE
+ */
+body {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #111111;
+  background-color: #fff;
+}

@@ -1,0 +1,63 @@
+{% extends './base.html' %}
+{% load static %}
+{% block title %}Register Page{% endblock title %}
+
+{% block content %} 
+<div class="container">
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6 offset-3">
+
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                <strong>Message:</strong> {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+
+            <div class="card">
+                <div class="card-header">
+                    <h1>User Register</h1>
+                </div>
+                <div class="card-body">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+
+                        <label for="">Username:</label>
+                        <input type="text" name="username" autofocus class="form-control" autocapitalize="none"  maxlength="150">
+                        <br>
+                        <label for="">First Name:</label>
+                        <input type="text" id="fname" placeholder="" autofocus class="form-control" autocapitalize="none" maxlength="150"  name="fname" required>
+                        <br>
+                        <label for="">Last Name:</label>
+                        <input type="text" id="lname" placeholder="" autofocus class="form-control" autocapitalize="none" maxlength="150" name="lname" required>
+                        <br>
+
+                        <label for="">Email Address:</label>
+                        <input type="text" id="email" placeholder="" autofocus class="form-control" autocapitalize="none" maxlength="150" name="email" required>
+                        <br>
+                        
+                        <label for="">Password:</label>
+                        <input type="password" id="pass1" placeholder="" autofocus class="form-control" autocapitalize="none" maxlength="150" name="pass1" required>
+                        <br>
+
+                        <label for="">Confirm Password:</label>
+                        <input type="password" id="pass2" placeholder="" autofocus class="form-control" autocapitalize="none" maxlength="150" name="pass2" required>
+                        <br>
+
+                        <button type="submit">SignUp</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                   Already Registered? <a href="{% url 'login' %}">Click Here</a>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

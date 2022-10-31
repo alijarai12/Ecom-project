@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <h2>
+       Our <span>products</span>
+    </h2>
+    <div class="row">
+      {% for p in product %}
+      <div class="col-lg-4">
+         <div class="box-element product">
+            <a href="{% url 'productdetail' p.id %}" class="btn">
+               <div class="item"><img class="thumbnail" src="{{p.product_image.url}}" alt="" height="200px"><br><span class="fw-bold">{{p.title}}</span><br><span class="fs-5">Rs.{{p.price}}</span></div></a> 
+            
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+ 
+</div>
+
+{% endblock content %}
